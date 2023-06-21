@@ -7,7 +7,7 @@ declare -a domain=($(echo $CLUSTER_DOMAINS | jq -r '.[0]'))
 
 # deploy and test an nginx server on same account domain
 bash scripts/deploy_nginx.sh ${domain}
-sleep 5
+sleep 10
 
 bats test/validate_cdicohorts_digital.bats
 
